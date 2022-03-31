@@ -1,5 +1,6 @@
-.App {
-  text-align: center;
+a:link, a:visited {
+  color: rgb(245, 245, 245);
+  text-decoration: none;
 }
 
 ul {
@@ -7,27 +8,97 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: rgb(51, 51, 51);
+  background-color: rgb(40, 40, 40);
 }
 
 li {
   float: left;
+  text-align: center;
 }
 
 li a {
   display: block;
-  color: white;
   padding: 14px 16px;
+  width: 80px;
 }
 
 li a:hover {
-  background-color: rgb(40, 40, 40);
+  background-color: rgb(50, 50, 50);
 }
 
 .search {
-  background-color: rgb(51, 51, 51);
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  float: right;
+  height: 49px;
+  padding-right: 10px;
+}
+
+input {
+  outline: none;
+}
+
+.active {
+  background-color: rgb(50, 50, 50);
+}
+
+.avatar {
+  border: 2px solid rgb(40, 40, 40);
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 296px;
+  gap: 10px;
+  padding: 20px;
+}
+
+.sidebar-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile {
+  display: flex;
+}
+
+.profile p {
+  margin: 0px;
+}
+
+.icon-align {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.button {
+  background: url("./icons/search.png") no-repeat;
+  width: 24px;
+  height: 24px;
+  font-size: 0;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.text {
+  padding: 0 50px;
+}
+
+.text h1, h4 {
+  text-align: center;
+}
+
+.text p {
+  margin-top: 5px;
+}
+
+hr {
+  width: 100%;
+  border-color: rgb(40, 40, 40);
 }

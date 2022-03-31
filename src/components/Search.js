@@ -1,17 +1,19 @@
-import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-function Search({getSearchTerm}) {
-  const [searchTerm, setSearchTerm] = useState();
+function Search() {
+  let navigate = useNavigate();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    navigate("../user/" + e.target.username.value);
+    e.target.username.value = "";
+  }
 
   return (
-    <div className="search">
-      <input
-        type="text"
-        value={searchTerm}
-        placeholder="Search..."
-        onChange={(e) => getSearchTerm(e.target.value)}
-      />
-    </div>
+    <form className="search" onSubmit={(e) => handleSubmit(e)}>
+      <input type="text" placeholder="Search..." name="username" />
+      <input className="button" type="submit" />
+    </form>
   );
 }
 

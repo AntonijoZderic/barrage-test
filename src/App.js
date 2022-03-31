@@ -1,35 +1,38 @@
-import { useState, useEffect } from 'react'
 import './App.css';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom' 
+import {BrowserRouter as Router, Routes, Route, NavLink} from 'react-router-dom' 
 import Home from './components/Home'
+import Team from './components/Team'
+import Enterprise from './components/Enterprise'
 import Faq from './components/Faq'
+import User from './components/User'
+import Search from './components/Search'
 
 function App() {
-  const [apiData, setApiData] = useState({});
-  const [searchTerm, setSearchTerm] = useState();
-
-  useEffect(() => {
-    fetch('https://api.github.com/users/' + searchTerm)
-    .then(response => response.json())
-    .then((data) => { setApiData(data);}
-    );
-  }, [searchTerm]);
-
   return (
     <Router>
-      <div className>
+      <div>
         <ul>
           <li>
-            <a href="/faq">Faq</a>
+            <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : '')}>Homepage</NavLink>
           </li>
           <li>
-            <a href="/home">Home</a>
+            <NavLink to="/team" className={({ isActive }) => (isActive ? 'active' : '')}>Team</NavLink>
           </li>
+          <li>
+            <NavLink to="/enterprise" className={({ isActive }) => (isActive ? 'active' : '')}>Enterprise</NavLink>
+          </li>
+          <li>
+            <NavLink to="/faq" className={({ isActive }) => (isActive ? 'active' : '')}>FAQ</NavLink>
+          </li>
+          <Search />
         </ul>
       </div>
       <Routes>
-        <Route path="/faq"  element={<Faq />} />
-        <Route path="/home" element={<Home apiData={apiData} getSearchTerm={(st) => setSearchTerm(st)} searchTerm={searchTerm} />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/team" element={<Team />} />
+        <Route path="/enterprise" element={<Enterprise />} />
+        <Route path="/faq" element={<Faq />} />
+        <Route path="/user/:username" element={<User />} />
       </Routes>
     </Router>
   );
