@@ -10,19 +10,19 @@ import Search from './components/Search'
 function App() {
   return (
     <Router>
-      <div>
+      <div className="nav">
         <ul>
           <li>
-            <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : '')}>Homepage</NavLink>
+            <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : undefined)}>Homepage</NavLink>
           </li>
           <li>
-            <NavLink to="/team" className={({ isActive }) => (isActive ? 'active' : '')}>Team</NavLink>
+            <NavLink to="/team" className={({ isActive }) => (isActive ? 'active' : undefined)}>Team</NavLink>
           </li>
           <li>
-            <NavLink to="/enterprise" className={({ isActive }) => (isActive ? 'active' : '')}>Enterprise</NavLink>
+            <NavLink to="/enterprise" className={({ isActive }) => (isActive ? 'active' : undefined)}>Enterprise</NavLink>
           </li>
           <li>
-            <NavLink to="/faq" className={({ isActive }) => (isActive ? 'active' : '')}>FAQ</NavLink>
+            <NavLink to="/faq" className={({ isActive }) => (isActive ? 'active' : undefined)}>FAQ</NavLink>
           </li>
           <Search />
         </ul>

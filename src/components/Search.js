@@ -11,8 +11,8 @@ function Search() {
 
   return (
     <form className="search" onSubmit={(e) => handleSubmit(e)}>
-      <input type="text" placeholder="Search..." name="username" />
-      <input className="button" type="submit" />
+      <input type="text" placeholder="Enter username" name="username" />
+      <button className="search-btn" type="submit">Search</button>
     </form>
   );
 }
