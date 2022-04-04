@@ -58,7 +58,7 @@ function Tabs({ username, repositories, followersData, followingData }) {
     var d = Math.round(s / 86400);
 
     if (s < 60) {
-      return "Updated " + s + " seconds ago"
+      return "Updated " + Math.round(s) + " seconds ago"
     } else if (s < 60*1.5) {
       return "Updated " + m + " minute ago";
     } else if (s < 60*60) {
@@ -188,7 +188,7 @@ function Tabs({ username, repositories, followersData, followingData }) {
       {followersData.slice(offset(), offset() + pageLimit).map((data, index) => {
         return (
         <a href={"/user/" + data.login} target="_blank" rel="noreferrer" key={index}>
-          <div className="follow card"><img className="avatar" src={data.avatar_url} alt="avatar" height="100" width="100"></img>
+          <div className="user card"><img className="avatar" src={data.avatar_url} alt="avatar" height="100" width="100"></img>
             <p>{data.login}</p>
           </div>
         </a>
@@ -202,7 +202,7 @@ function Tabs({ username, repositories, followersData, followingData }) {
       {followingData.slice(offset(), offset() + pageLimit).map((data, index) => {
         return (
         <a href={"/user/" + data.login} target="_blank" rel="noreferrer" key={index}>
-          <div className="follow card"><img className="avatar" src={data.avatar_url} alt="avatar" height="100" width="100"></img>
+          <div className="user card"><img className="avatar" src={data.avatar_url} alt="avatar" height="100" width="100"></img>
             <p>{data.login}</p>
           </div>
         </a>
