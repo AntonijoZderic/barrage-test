@@ -11,8 +11,33 @@ a:link, a:visited {
   text-align: center;
 }
 
-.text p {
+.text p:not(.panel-text) {
   margin-top: 5px;
+}
+
+.accordion {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px;
+  margin: 0;
+  background-color: var(--gray30);
+  cursor: pointer;
+}
+
+.accordion:hover {
+  background-color: var(--gray40);
+}
+
+.panel {
+  overflow: hidden;
+  transition: 0.5s;
+  background-color: rgb(23, 23, 23);
+}
+
+.panel-text {
+  font-family: "Open sans";
+  padding: 18px;
+  margin: 0;
 }
 
 hr {
@@ -97,10 +122,6 @@ input {
   width: 70%;
 }
 
-.users .card:hover {
-  background-color: var(--gray30);
-}
-
 .profile {
   display: flex;
 }
@@ -121,10 +142,6 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.tab-container .card:hover {
-  background-color: var(--gray30);
 }
 
 .tab-container {
@@ -161,7 +178,8 @@ input {
 .tabs .active {
   border: 1px solid var(--gray40);
   border-bottom-color: rgb(21, 21, 21);
-  margin-bottom: -1px
+  margin-bottom: -1px;
+  cursor: default;
 }
 
 .tab-container .avatar {
@@ -182,6 +200,10 @@ input {
   background-color: rgb(23, 23, 23);
 }
 
+.card:hover {
+  background-color: var(--gray30);
+}
+
 .icon-align .icon-align {
   gap: 1px;
 }
@@ -189,6 +211,7 @@ input {
 .user {
   display: flex;
   align-items: center;
+  padding: 10.5px;
 }
 
 .sort-filter {
@@ -208,6 +231,7 @@ input {
 
 .dropdown .active {
   background-color: var(--gray40);
+  cursor: default;
 }
 
 .dropdown-content {
